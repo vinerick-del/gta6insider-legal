@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service — GTA 6 Insider</title>
+<style>
+  :root {
+    --bg: #eef0ed;
+    --surface: #ffffff;
+    --surface-border: #dde1dc;
+    --ink: #161b22;
+    --muted: #5b6672;
+    --accent: #1f6f6b;
+    --accent-ink: #ffffff;
+    --accent-soft: #dce9e7;
+    --accent-soft-border: #bcd6d3;
+    --amber: #ab7d34;
+    --amber-soft: #f3e9d6;
+    --rule: #d7dbd5;
+    --code-bg: #e8ebe6;
+
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "PT Serif", Georgia, serif;
+    --font-body: Seravek, "Gill Sans Nova", Calibri, "Segoe UI", system-ui, sans-serif;
+    --font-mono: "SF Mono", ui-monospace, Consolas, "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c;
+      --surface: #1a2028;
+      --surface-border: #2a323c;
+      --ink: #e8e6df;
+      --muted: #93a0ac;
+      --accent: #4fb3ac;
+      --accent-ink: #0c1614;
+      --accent-soft: #1e3634;
+      --accent-soft-border: #2c4d49;
+      --amber: #d7a95f;
+      --amber-soft: #33291a;
+      --rule: #2a323c;
+      --code-bg: #0f1318;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12161c;
+    --surface: #1a2028;
+    --surface-border: #2a323c;
+    --ink: #e8e6df;
+    --muted: #93a0ac;
+    --accent: #4fb3ac;
+    --accent-ink: #0c1614;
+    --accent-soft: #1e3634;
+    --accent-soft-border: #2c4d49;
+    --amber: #d7a95f;
+    --amber-soft: #33291a;
+    --rule: #2a323c;
+    --code-bg: #0f1318;
+  }
+  :root[data-theme="light"] {
+    --bg: #eef0ed;
+    --surface: #ffffff;
+    --surface-border: #dde1dc;
+    --ink: #161b22;
+    --muted: #5b6672;
+    --accent: #1f6f6b;
+    --accent-ink: #ffffff;
+    --accent-soft: #dce9e7;
+    --accent-soft-border: #bcd6d3;
+    --amber: #ab7d34;
+    --amber-soft: #f3e9d6;
+    --rule: #d7dbd5;
+    --code-bg: #e8ebe6;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    padding: clamp(28px, 6vw, 72px) 20px 80px;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 28px;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(28px, 4.2vw, 38px);
+    line-height: 1.15;
+    margin: 4px 0 2px;
+    text-wrap: balance;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 58ch;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+  }
+
+  nav.toc {
+    margin-bottom: 40px;
+    font-size: 14px;
+  }
+  nav.toc ol {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 28px;
+  }
+  nav.toc li { break-inside: avoid; margin-bottom: 7px; }
+  nav.toc a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.toc a:hover { border-color: var(--accent); color: var(--accent); }
+  nav.toc .toc-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  section.clause {
+    margin-bottom: 38px;
+    scroll-margin-top: 24px;
+  }
+  section.clause h2 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  section.clause h2 .num {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  section.clause p, section.clause li {
+    max-width: 66ch;
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+  section.clause p { margin: 0 0 14px; }
+  section.clause ul {
+    margin: 0 0 14px;
+    padding-left: 20px;
+  }
+  section.clause li { margin-bottom: 8px; }
+  section.clause li::marker { color: var(--accent); }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-soft-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 14.5px;
+    line-height: 1.55;
+    max-width: 66ch;
+    margin: 0 0 14px;
+  }
+  .callout strong { color: var(--accent); }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 10px;
+    padding: 22px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 40px;
+  }
+  .contact-item .label {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .contact-item a { color: var(--accent); text-decoration: none; font-size: 15px; }
+  .contact-item a:hover { text-decoration: underline; }
+  .contact-item div.value { font-size: 15px; }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <span class="eyebrow">Terms of Service</span>
+    <h1>GTA 6 Insider — Publishing Tool</h1>
+    <p class="subtitle">Governs use of the TikTok publishing integration used to review and post videos to a single, owner-operated TikTok account.</p>
+    <div class="meta-row">
+      <span>Effective: 15 July 2026</span>
+      <span>Scope: TikTok Content Posting API integration</span>
+      <span>Contact: vinerick@gmail.com</span>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <div class="toc-label">Contents</div>
+    <ol>
+      <li><a href="#scope">1. Scope</a></li>
+      <li><a href="#use">2. Acceptable use</a></li>
+      <li><a href="#account">3. Your TikTok account</a></li>
+      <li><a href="#content">4. Content responsibility</a></li>
+      <li><a href="#availability">5. Availability &amp; changes</a></li>
+      <li><a href="#liability">6. Liability</a></li>
+      <li><a href="#law">7. Governing terms</a></li>
+      <li><a href="#contact">8. Contact</a></li>
+    </ol>
+  </nav>
+
+  <section class="clause" id="scope">
+    <h2><span class="num">1</span>Scope</h2>
+    <p>GTA 6 Insider is an independent, creator-operated TikTok channel about GTA 6 news, rumors, and speculation. These terms cover the internal publishing tool the operator built to draft, review, and post their own videos to their own TikTok account through TikTok's official Content Posting API.</p>
+    <p>It is a single-owner tool, not a public app, plugin, or service offered to other creators or accounts. By using it, the operator agrees to these terms.</p>
+  </section>
+
+  <section class="clause" id="use">
+    <h2><span class="num">2</span>Acceptable use</h2>
+    <p>The tool may only be used to:</p>
+    <ul>
+      <li>Connect the operator's own TikTok account via OAuth.</li>
+      <li>Review videos produced by the operator before publishing.</li>
+      <li>Publish those videos to the connected account, at the privacy level the operator selects.</li>
+    </ul>
+    <p>It must not be used to connect or publish on behalf of any account the operator does not own, to automate engagement (likes, follows, comments), or to circumvent any TikTok Community Guideline or Terms of Service.</p>
+  </section>
+
+  <section class="clause" id="account">
+    <h2><span class="num">3</span>Your TikTok account</h2>
+    <p>Connecting an account is done entirely through TikTok's own OAuth login — this tool never sees or stores a TikTok password. Access can be revoked at any time from TikTok's Settings → Manage apps and devices, which immediately stops the tool from publishing on that account's behalf.</p>
+  </section>
+
+  <section class="clause" id="content">
+    <h2><span class="num">4</span>Content responsibility</h2>
+    <p>The operator is solely responsible for reviewing each video before publishing and for ensuring it complies with TikTok's Community Guidelines and Terms of Service, applicable law, and platform policy on AI-generated or speculative content. Every video is original, speculative commentary about a game that has not been released, and is not presented as official footage or leaked material.</p>
+  </section>
+
+  <section class="clause" id="availability">
+    <h2><span class="num">5</span>Availability &amp; changes</h2>
+    <p>This is an internally maintained tool, run on the operator's own machine, without an uptime guarantee. Its features, including these terms, may change as the tool evolves; the effective date above will be updated when they do.</p>
+  </section>
+
+  <section class="clause" id="liability">
+    <h2><span class="num">6</span>Liability</h2>
+    <div class="callout">The tool is provided as-is, with no warranty. The operator uses it at their own discretion and is responsible for any content published through it.</div>
+  </section>
+
+  <section class="clause" id="law">
+    <h2><span class="num">7</span>Governing terms</h2>
+    <p>Use of the TikTok API and platform through this tool remains subject to TikTok's own Terms of Service and Developer Agreement at all times; nothing here overrides those.</p>
+  </section>
+
+  <section class="clause" id="contact">
+    <h2><span class="num">8</span>Contact</h2>
+    <div class="contact-card">
+      <div class="contact-item">
+        <div class="label">Operator</div>
+        <div class="value">Erick</div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Email</div>
+        <a href="mailto:vinerick@gmail.com">vinerick@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <div class="label">Privacy policy</div>
+        <a href="./index.html">View privacy policy</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    GTA 6 Insider is an independent fan channel and is not affiliated with, endorsed by, or connected to Rockstar Games, Take-Two Interactive, or TikTok Inc.
+  </footer>
+
+</div>
+</body>
+</html>
