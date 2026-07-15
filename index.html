@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — GTA 6 Insider</title>
+<style>
+  :root {
+    --bg: #eef0ed;
+    --surface: #ffffff;
+    --surface-border: #dde1dc;
+    --ink: #161b22;
+    --muted: #5b6672;
+    --accent: #1f6f6b;
+    --accent-ink: #ffffff;
+    --accent-soft: #dce9e7;
+    --accent-soft-border: #bcd6d3;
+    --amber: #ab7d34;
+    --amber-soft: #f3e9d6;
+    --rule: #d7dbd5;
+    --code-bg: #e8ebe6;
+
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "PT Serif", Georgia, serif;
+    --font-body: Seravek, "Gill Sans Nova", Calibri, "Segoe UI", system-ui, sans-serif;
+    --font-mono: "SF Mono", ui-monospace, Consolas, "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c;
+      --surface: #1a2028;
+      --surface-border: #2a323c;
+      --ink: #e8e6df;
+      --muted: #93a0ac;
+      --accent: #4fb3ac;
+      --accent-ink: #0c1614;
+      --accent-soft: #1e3634;
+      --accent-soft-border: #2c4d49;
+      --amber: #d7a95f;
+      --amber-soft: #33291a;
+      --rule: #2a323c;
+      --code-bg: #0f1318;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12161c;
+    --surface: #1a2028;
+    --surface-border: #2a323c;
+    --ink: #e8e6df;
+    --muted: #93a0ac;
+    --accent: #4fb3ac;
+    --accent-ink: #0c1614;
+    --accent-soft: #1e3634;
+    --accent-soft-border: #2c4d49;
+    --amber: #d7a95f;
+    --amber-soft: #33291a;
+    --rule: #2a323c;
+    --code-bg: #0f1318;
+  }
+  :root[data-theme="light"] {
+    --bg: #eef0ed;
+    --surface: #ffffff;
+    --surface-border: #dde1dc;
+    --ink: #161b22;
+    --muted: #5b6672;
+    --accent: #1f6f6b;
+    --accent-ink: #ffffff;
+    --accent-soft: #dce9e7;
+    --accent-soft-border: #bcd6d3;
+    --amber: #ab7d34;
+    --amber-soft: #f3e9d6;
+    --rule: #d7dbd5;
+    --code-bg: #e8ebe6;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    padding: clamp(28px, 6vw, 72px) 20px 80px;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 28px;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(28px, 4.2vw, 38px);
+    line-height: 1.15;
+    margin: 4px 0 2px;
+    text-wrap: balance;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 58ch;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+  }
+
+  .summary-card {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 36px;
+  }
+  .summary-card h2 {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 14px;
+    font-weight: 600;
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px 24px;
+  }
+  .summary-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .summary-mark {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-soft-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+  .summary-mark svg { width: 12px; height: 12px; stroke: var(--accent); }
+  .summary-item p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+  .summary-item strong { display: block; font-size: 14.5px; margin-bottom: 1px; }
+
+  nav.toc {
+    margin-bottom: 40px;
+    font-size: 14px;
+  }
+  nav.toc ol {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 28px;
+  }
+  nav.toc li { break-inside: avoid; margin-bottom: 7px; }
+  nav.toc a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.toc a:hover { border-color: var(--accent); color: var(--accent); }
+  nav.toc .toc-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  section.clause {
+    margin-bottom: 38px;
+    scroll-margin-top: 24px;
+  }
+  section.clause h2 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  section.clause h2 .num {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  section.clause p, section.clause li {
+    max-width: 66ch;
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+  section.clause p { margin: 0 0 14px; }
+  section.clause ul {
+    margin: 0 0 14px;
+    padding-left: 20px;
+  }
+  section.clause li { margin-bottom: 8px; }
+  section.clause li::marker { color: var(--accent); }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-soft-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 14.5px;
+    line-height: 1.55;
+    max-width: 66ch;
+    margin: 0 0 14px;
+  }
+  .callout strong { color: var(--accent); }
+
+  .data-table-wrap { overflow-x: auto; margin: 0 0 16px; }
+  table.data-table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 480px;
+    font-size: 14px;
+  }
+  table.data-table th, table.data-table td {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.data-table th {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  table.data-table code {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    background: var(--code-bg);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 10px;
+    padding: 22px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 40px;
+  }
+  .contact-item .label {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .contact-item a { color: var(--accent); text-decoration: none; font-size: 15px; }
+  .contact-item a:hover { text-decoration: underline; }
+  .contact-item div.value { font-size: 15px; }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    section.clause { scroll-behavior: smooth; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <span class="eyebrow">Privacy Policy</span>
+    <h1>GTA 6 Insider — Publishing Tool</h1>
+    <p class="subtitle">Covers the TikTok publishing integration used to review and post videos to a single, owner-operated TikTok account.</p>
+    <div class="meta-row">
+      <span>Effective: 14 July 2026</span>
+      <span>Scope: TikTok Content Posting API integration</span>
+      <span>Contact: vinerick@gmail.com</span>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>At a glance</h2>
+    <div class="summary-grid">
+      <div class="summary-item">
+        <span class="summary-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <p><strong>Single-owner tool</strong>This is not a public multi-user service. It publishes to one TikTok account controlled by its operator.</p>
+      </div>
+      <div class="summary-item">
+        <span class="summary-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <p><strong>No data sold, ever</strong>Nothing collected here is sold, rented, or used for advertising, to anyone, under any circumstance.</p>
+      </div>
+      <div class="summary-item">
+        <span class="summary-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <p><strong>Stored locally</strong>Access tokens and video metadata live on the operator's own machine, not on a shared server.</p>
+      </div>
+      <div class="summary-item">
+        <span class="summary-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <p><strong>Revoke anytime</strong>Disconnect from TikTok's own app-permissions page, and access ends immediately.</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <div class="toc-label">Contents</div>
+    <ol>
+      <li><a href="#scope">1. Scope &amp; who operates this</a></li>
+      <li><a href="#data">2. Data we collect</a></li>
+      <li><a href="#use">3. How we use it</a></li>
+      <li><a href="#sharing">4. Third-party services</a></li>
+      <li><a href="#retention">5. Storage &amp; retention</a></li>
+      <li><a href="#rights">6. Your rights &amp; revoking access</a></li>
+      <li><a href="#security">7. Security</a></li>
+      <li><a href="#changes">8. Changes to this policy</a></li>
+      <li><a href="#contact">9. Contact</a></li>
+    </ol>
+  </nav>
+
+  <section class="clause" id="scope">
+    <h2><span class="num">1</span>Scope &amp; who operates this</h2>
+    <p>GTA 6 Insider is an independent, creator-operated TikTok channel about GTA 6 news, rumors, and speculation. This policy covers the internal publishing tool the operator built to draft, review, and post their own videos to their own TikTok account via TikTok's official Content Posting API.</p>
+    <p>It is not a public app, plugin, or service offered to other creators. No one other than the operator authenticates through it, and no TikTok account other than the one the operator owns is ever connected to it.</p>
+  </section>
+
+  <section class="clause" id="data">
+    <h2><span class="num">2</span>Data we collect</h2>
+    <p>The tool collects only what TikTok's API requires to publish a video and to show the operator whose account they're posting to before each post:</p>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Data</th><th>Source</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>OAuth access &amp; refresh tokens</td><td>TikTok, at connection time</td><td>Authenticate each API call without asking the operator to log in again</td></tr>
+          <tr><td>TikTok username &amp; avatar URL</td><td><code>creator_info.query</code></td><td>Shown on-screen so the operator can confirm which account they're about to post to</td></tr>
+          <tr><td>Allowed privacy levels for the account</td><td><code>creator_info.query</code></td><td>Populates the privacy selector shown before every post</td></tr>
+          <tr><td>Video files, titles, captions, hashtags</td><td>Generated by the tool itself</td><td>The actual content being uploaded and published</td></tr>
+          <tr><td>Publish ID &amp; publish status</td><td>TikTok, after posting</td><td>Confirm a post succeeded and let the operator check on it later</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout"><strong>We do not request</strong> TikTok direct messages, contacts, or any other account's data. The <code>video.publish</code> and <code>user.info.basic</code> scopes are the only ones requested.</div>
+  </section>
+
+  <section class="clause" id="use">
+    <h2><span class="num">3</span>How we use it</h2>
+    <ul>
+      <li>Authenticating requests to TikTok's Content Posting API on the operator's behalf.</li>
+      <li>Displaying the connected account (username, avatar) and its real available privacy levels before every publish action, so the operator always knows exactly what they're about to post and to whom.</li>
+      <li>Uploading finished videos and tracking whether the post succeeded.</li>
+    </ul>
+    <p>Data is never used to profile viewers, build advertising audiences, or train any model beyond the operator's own script-writing assistant, which only ever sees the video's own narration text — never TikTok account or viewer data.</p>
+  </section>
+
+  <section class="clause" id="sharing">
+    <h2><span class="num">4</span>Third-party services</h2>
+    <p>Producing a video involves a small number of processing services. None of them receive TikTok account data — only the content being generated:</p>
+    <ul>
+      <li><strong>Anthropic (Claude)</strong> — writes narration scripts and image prompts from a news headline or topic.</li>
+      <li><strong>Google (Gemini / Veo)</strong> — generates scene images and the video hook clip.</li>
+      <li><strong>Pollinations.ai</strong> — generates background-track images.</li>
+    </ul>
+    <p>TikTok tokens, usernames, and avatars are never sent to any of these services. They only ever see the creative content of the video being made.</p>
+  </section>
+
+  <section class="clause" id="retention">
+    <h2><span class="num">5</span>Storage &amp; retention</h2>
+    <p>Tokens and video data are stored in a local file store and a local SQLite database on the operator's own machine — there is no shared or third-party server. Tokens are kept until the operator disconnects the app or TikTok revokes them; video files and metadata are kept for as long as the operator wants them for their own review history, and can be deleted at any time.</p>
+  </section>
+
+  <section class="clause" id="rights">
+    <h2><span class="num">6</span>Your rights &amp; revoking access</h2>
+    <p>Because the only TikTok account involved belongs to the operator themself, exercising these rights is a matter of the operator acting on their own account:</p>
+    <ul>
+      <li><strong>Revoke access</strong> anytime from TikTok's Settings → Manage apps and devices, or by deleting the local token file.</li>
+      <li><strong>Delete stored data</strong> by removing the local database and video files — there is no remote copy.</li>
+      <li><strong>See what's stored</strong> by inspecting the local database directly, since nothing is hidden behind a remote service.</li>
+    </ul>
+  </section>
+
+  <section class="clause" id="security">
+    <h2><span class="num">7</span>Security</h2>
+    <p>The OAuth callback used to connect the account runs on a short-lived, single-purpose local endpoint, separate from the review dashboard, and is only exposed during the connection step itself. Tokens are stored in a local file that is never committed to source control or transmitted anywhere except to TikTok's own API.</p>
+  </section>
+
+  <section class="clause" id="changes">
+    <h2><span class="num">8</span>Changes to this policy</h2>
+    <p>If the tool's data practices change — for example, if a new third-party processing service is added — this page will be updated and the effective date above will change accordingly.</p>
+  </section>
+
+  <section class="clause" id="contact">
+    <h2><span class="num">9</span>Contact</h2>
+    <div class="contact-card">
+      <div class="contact-item">
+        <div class="label">Operator</div>
+        <div class="value">Erick</div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Email</div>
+        <a href="mailto:vinerick@gmail.com">vinerick@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    GTA 6 Insider is an independent fan channel and is not affiliated with, endorsed by, or connected to Rockstar Games, Take-Two Interactive, or TikTok Inc.
+  </footer>
+
+</div>
+</body>
+</html>
